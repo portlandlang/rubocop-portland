@@ -1,3 +1,5 @@
 ## [Unreleased]
 
+- **`Portland/ForLoop`**, the first cop: `for word in words` refuses in Portland (docs/ruby/removed-syntax.md), and the cop rewrites its head to `words.each do |word|`, taking an optional `do`, keeping several loop variables as block parameters, and parenthesizing a range or an operator expression before `.each`. The body and `end` are untouched. The rewrite is marked unsafe, since a `for` variable outlives its loop and a block parameter doesn't. `config/default.yml` gives each cop, beyond RuboCop's keys, the `Difference` (thesis, taste, or gap) and `Status` (decided or undecided) that ruby_research's readiness census reads.
+
 - The skeleton, from `rubocop-extension-generator`, as a RuboCop plugin (lint_roller), with its placeholders filled: summary, description, homepage and source under portlandlang, Ruby 4.0.7, pushes to rubygems.org with MFA required, RuboCop 1.91 or later. The generator's duplicated Gemfile lines and Rakefile tasks are gone, and its placeholder spec, which named `Rubocop` and asserted `false`, checks the version.

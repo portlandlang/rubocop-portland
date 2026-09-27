@@ -1,1 +1,18 @@
-# Write it!
+# One cop per Ruby difference portland's ledger (docs/ruby/*.md) names.
+#
+# Beyond RuboCop's own keys, each cop carries:
+#   Difference: thesis | taste | gap — principle 2's kinds (docs/principles.md):
+#     thesis, a difference Portland exists for; taste, a spelling it removed,
+#     which defaults to Ruby and must name what it buys; gap, something not
+#     decided or built yet.
+#   Status: decided | undecided
+# ruby_research's readiness census reads these to grade each gem.
+
+Portland/ForLoop:
+  Description: 'Portland has no `for`; `each` is the one loop over a collection.'
+  Enabled: true
+  SafeAutoCorrect: false
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md'
+  Difference: taste
+  Status: decided
