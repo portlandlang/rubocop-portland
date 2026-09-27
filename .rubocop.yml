@@ -2,6 +2,10 @@ plugins:
   - rubocop-internal_affairs
   - rubocop-portland
 
+AllCops:
+  NewCops: enable
+  SuggestExtensions: false
+
 Naming/FileName:
   Exclude:
     - lib/rubocop-portland.rb

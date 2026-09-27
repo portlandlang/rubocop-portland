@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "portland/version"
+require_relative 'portland/version'
 
 module RuboCop
   module Portland

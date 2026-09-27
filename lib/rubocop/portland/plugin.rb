@@ -10,8 +10,8 @@ module RuboCop
         LintRoller::About.new(
           name: 'rubocop-portland',
           version: VERSION,
-          homepage: "TODO: Put your plugin's homepage URL here.",
-          description: "TODO: Put your plugin's description here."
+          homepage: 'https://github.com/portlandlang/rubocop-portland',
+          description: "The migration linter for Portland: a cop for each Ruby difference the language's ledger names."
         )
       end
 
