@@ -8,11 +8,67 @@
 #   Status: decided | undecided
 # ruby_research's readiness census reads these to grade each gem.
 
+Portland/BeginEndBlock:
+  Description: 'Portland has no `BEGIN` or `END` blocks.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md'
+  Difference: taste
+  Status: decided
+
+Portland/ClassVariable:
+  Description: 'Portland has no class variables; shared mutable state is what it exists to avoid.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md'
+  Difference: thesis
+  Status: decided
+
+Portland/FlipFlop:
+  Description: 'Portland has no flip-flops.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md'
+  Difference: taste
+  Status: decided
+
 Portland/ForLoop:
   Description: 'Portland has no `for`; `each` is the one loop over a collection.'
   Enabled: true
   SafeAutoCorrect: false
   VersionAdded: '<<next>>'
   Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md'
+  Difference: taste
+  Status: decided
+
+Portland/GlobalVariable:
+  Description: 'Portland has no global variables or special variables.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md'
+  Difference: taste
+  Status: decided
+
+Portland/Inheritance:
+  Description: 'Portland has no inheritance or `super`; shared behavior lives in a trait.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/mixins-and-inheritance.md'
+  Difference: taste
+  Status: decided
+
+Portland/RaiseRescue:
+  Description: 'Portland has no exceptions; a fallible operation returns its value or a failure.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md'
+  Difference: thesis
+  Status: decided
+
+Portland/SingletonClass:
+  Description: 'Portland has no `class << self`; each type function is `def self.name`.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md'
   Difference: taste
   Status: decided

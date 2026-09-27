@@ -6,8 +6,14 @@ AllCops:
   NewCops: enable
   SuggestExtensions: false
 
+# The plugin loads so its config is checked on every run, but this gem is
+# Ruby, not code on its way to Portland, so its own cops stay off here.
+Portland:
+  Enabled: false
+
 Metrics/BlockLength:
   Exclude:
+    - rubocop-portland.gemspec
     - spec/**/*
 
 Naming/FileName:

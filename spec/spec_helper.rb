@@ -10,5 +10,8 @@ RSpec.configure do |config|
   config.fail_if_no_examples = true
 
   config.order = :random
+
+  # Every example parses as Ruby 4.0, the Ruby the migrating code is on.
+  config.include_context 'ruby 4.0'
   Kernel.srand config.seed
 end
