@@ -24,6 +24,22 @@ Portland/ClassVariable:
   Difference: thesis
   Status: decided
 
+Portland/EvalFamily:
+  Description: 'Portland has no `eval`, `send`, `instance_eval`, or reaching instance variables by name.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md'
+  Difference: thesis
+  Status: decided
+
+Portland/Fetch:
+  Description: 'Portland retires `fetch`; `collection[key] or default` says it.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/lookups.md'
+  Difference: taste
+  Status: decided
+
 Portland/FlipFlop:
   Description: 'Portland has no flip-flops.'
   Enabled: true
@@ -41,12 +57,28 @@ Portland/ForLoop:
   Difference: taste
   Status: decided
 
+Portland/FreezeFamily:
+  Description: 'Portland values never mutate, so `freeze`, `frozen?`, `dup`, and `clone` have nothing to do.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md'
+  Difference: thesis
+  Status: decided
+
 Portland/GlobalVariable:
   Description: 'Portland has no global variables or special variables.'
   Enabled: true
   VersionAdded: '<<next>>'
   Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md'
   Difference: taste
+  Status: decided
+
+Portland/InPlaceMutator:
+  Description: 'Portland values never mutate; the in-place mutators have no Portland meaning.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/mutability.md'
+  Difference: thesis
   Status: decided
 
 Portland/Inheritance:
@@ -57,11 +89,27 @@ Portland/Inheritance:
   Difference: taste
   Status: decided
 
+Portland/MethodMissing:
+  Description: 'Portland has no `method_missing` or `respond_to_missing?`; the runtime is closed.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md'
+  Difference: thesis
+  Status: decided
+
 Portland/RaiseRescue:
   Description: 'Portland has no exceptions; a fallible operation returns its value or a failure.'
   Enabled: true
   VersionAdded: '<<next>>'
   Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/errors.md'
+  Difference: thesis
+  Status: decided
+
+Portland/RuntimeDefineMethod:
+  Description: 'Portland makes no methods or constants at runtime: no `define_method`, `const_get`, or `const_set`.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md'
   Difference: thesis
   Status: decided
 
@@ -71,4 +119,12 @@ Portland/SingletonClass:
   VersionAdded: '<<next>>'
   Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md'
   Difference: taste
+  Status: decided
+
+Portland/ThreadModel:
+  Description: 'Portland has one concurrency model, `together`, in place of threads, fibers, mutexes, and queues.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/concurrency.md'
+  Difference: thesis
   Status: decided
