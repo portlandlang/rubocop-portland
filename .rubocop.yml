@@ -1,0 +1,7 @@
+plugins:
+  - rubocop-internal_affairs
+  - rubocop-portland
+
+Naming/FileName:
+  Exclude:
+    - lib/rubocop-portland.rb
