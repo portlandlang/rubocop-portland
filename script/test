@@ -1,0 +1,7 @@
+#!/bin/sh
+# Run the specs, then RuboCop on the whole repository.
+set -e
+cd "$(dirname "$0")/.."
+
+rv run bundle exec rspec
+rv run bundle exec rubocop

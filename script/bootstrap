@@ -1,0 +1,6 @@
+#!/bin/sh
+# Install the pinned Ruby's gems.
+set -e
+cd "$(dirname "$0")/.."
+
+rv run bundle install

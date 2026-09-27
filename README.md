@@ -1,43 +1,75 @@
-# RuboCop::Portland
+# rubocop-portland
 
-TODO: Delete this and the text below, and describe your gem
+The migration linter for [Portland](https://github.com/portlandlang/portland), a Ruby-flavored language for Apple silicon. Portland's promise to Rubyists is that it feels like home and porting is mechanical. Each cop here finds one Ruby spelling Portland changes or removes, says what Portland says instead, links the ledger page that explains why, and rewrites it where the rewrite is mechanical.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rubocop/portland`. To experiment with that code, run `bin/console` for an interactive prompt.
+Run it on a gem or an app to see how far the code is from Portland today, and which of those distances are decided and which are still open questions.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Not yet on RubyGems.org. From git, in a Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
-
-```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG --require=false
-```
-
-If bundler is not being used to manage dependencies, install the gem by executing:
-
-```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```ruby
+gem "rubocop-portland", github: "portlandlang/rubocop-portland", require: false
 ```
 
 ## Usage
 
-TODO: Write usage instructions here
+Add the plugin to `.rubocop.yml`:
+
+```yaml
+plugins:
+  - rubocop-portland
+```
+
+Then see only the Portland cops:
+
+```bash
+bundle exec rubocop --only Portland
+```
+
+And apply the mechanical rewrites:
+
+```bash
+bundle exec rubocop --only Portland -A
+```
+
+## The cops
+
+Each cop carries a `Difference` and a `Status` in `config/default.yml`, Portland's principle 2 kinds: **thesis**, a difference Portland exists for (values never mutate, failures are values, the runtime is closed); **taste**, a spelling Portland removed, which may come back; and **gap**, something Portland hasn't decided or built yet. [ruby_research](https://github.com/portlandlang/ruby_research)'s readiness census reads the same keys to grade every gem on RubyGems.org, shown at [portlandlang.com/gems](https://portlandlang.com/gems/).
+
+| Cop | Finds | Difference | Status | Rewrites |
+|---|---|---|---|---|
+| `Portland/ForLoop` | `for x in list` | taste | decided | yes, to `list.each do \|x\|` (unsafe) |
+| `Portland/NumberedParameter` | `_1`, `_2` | taste | decided | a lone `_1` to `it` |
+| `Portland/GlobalVariable` | `$count`, `$1`, `$~` | taste | decided | |
+| `Portland/BeginEndBlock` | `BEGIN { }`, `END { }` | taste | decided | |
+| `Portland/FlipFlop` | flip-flops | taste | decided | |
+| `Portland/Fetch` | `fetch` | taste | decided | |
+| `Portland/Inheritance` | `class A < B`, `super` | taste | decided | |
+| `Portland/SingletonClass` | `class << self` | taste | decided | |
+| `Portland/InstanceVariableRead` | reading `@name` | taste | decided | |
+| `Portland/ClassVariable` | `@@total` | thesis | decided | |
+| `Portland/RaiseRescue` | `raise`, `rescue`, `ensure`, `retry` | thesis | decided | |
+| `Portland/InPlaceMutator` | `push`, `upcase!`, and kin | thesis | decided | |
+| `Portland/FreezeFamily` | `freeze`, `dup`, `clone` | thesis | decided | |
+| `Portland/MethodMissing` | `method_missing` | thesis | decided | |
+| `Portland/RuntimeDefineMethod` | `define_method`, `const_get` | thesis | decided | |
+| `Portland/EvalFamily` | `eval`, `send`, `instance_eval` | thesis | decided | |
+| `Portland/ThreadModel` | `Thread`, `Mutex`, `Queue` | thesis | decided | |
+| `Portland/ShiftAppend` | `<<` (off by default) | thesis | decided | |
+| `Portland/InstanceVariableWrite` | assigning `@name` | thesis | undecided | |
+| `Portland/AttrWriter` | `attr_writer`, `attr_accessor` | thesis | undecided | |
+| `Portland/AttrReader` | `attr_reader` | taste | undecided | |
+| `Portland/Bitwise` | `&`, `\|`, `^`, `~`, `>>` | taste | undecided | |
+| `Portland/Visibility` | `private`, `protected` | gap | undecided | |
+| `Portland/RequireByName` | `require "name"` | gap | undecided | |
+| `Portland/Regex` | regex literals | gap | undecided | |
+| `Portland/Splat` | `*args`, `**options` | gap | undecided | |
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/veganstraightedge/rubocop-portland. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/veganstraightedge/rubocop-portland/blob/main/CODE_OF_CONDUCT.md).
+`script/bootstrap` installs dependencies, and `script/test` runs the specs and RuboCop. New cops start from `bundle exec rake 'new_cop[Portland/Name]'`.
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
-
-## Code of Conduct
-
-Everyone interacting in the Rubocop::Portland project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/veganstraightedge/rubocop-portland/blob/main/CODE_OF_CONDUCT.md).
+MIT.
