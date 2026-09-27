@@ -8,6 +8,22 @@
 #   Status: decided | undecided
 # ruby_research's readiness census reads these to grade each gem.
 
+Portland/AttrReader:
+  Description: 'Portland lists fields bare; `attr_reader` as a spelling of that is undecided.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/issues/134'
+  Difference: taste
+  Status: undecided
+
+Portland/AttrWriter:
+  Description: 'Portland has no setters yet; instance state is undecided.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/issues/103'
+  Difference: thesis
+  Status: undecided
+
 Portland/BeginEndBlock:
   Description: 'Portland has no `BEGIN` or `END` blocks.'
   Enabled: true
@@ -15,6 +31,14 @@ Portland/BeginEndBlock:
   Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/removed-syntax.md'
   Difference: taste
   Status: decided
+
+Portland/Bitwise:
+  Description: 'Portland leans toward named methods over the bitwise operators (tentative).'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/bitwise-operators.md'
+  Difference: taste
+  Status: undecided
 
 Portland/ClassVariable:
   Description: 'Portland has no class variables; shared mutable state is what it exists to avoid.'
@@ -89,12 +113,36 @@ Portland/Inheritance:
   Difference: taste
   Status: decided
 
+Portland/InstanceVariableRead:
+  Description: 'Portland reads a field by its bare name, not `@name`.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/classes.md'
+  Difference: taste
+  Status: decided
+
+Portland/InstanceVariableWrite:
+  Description: 'Portland has no instance state yet; it is undecided.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/issues/103'
+  Difference: thesis
+  Status: undecided
+
 Portland/MethodMissing:
   Description: 'Portland has no `method_missing` or `respond_to_missing?`; the runtime is closed.'
   Enabled: true
   VersionAdded: '<<next>>'
   Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md'
   Difference: thesis
+  Status: decided
+
+Portland/NumberedParameter:
+  Description: 'Portland has no `_1`; `it` is the one implicit block parameter.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/adr/0017-2026-07-23-it-under-no-shadow.md'
+  Difference: taste
   Status: decided
 
 Portland/RaiseRescue:
@@ -105,11 +153,35 @@ Portland/RaiseRescue:
   Difference: thesis
   Status: decided
 
+Portland/Regex:
+  Description: 'Portland has no regex yet; it is undecided.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/issues/74'
+  Difference: gap
+  Status: undecided
+
+Portland/RequireByName:
+  Description: 'Portland has no `require` by name yet; `require_relative` resolves.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/issues/116'
+  Difference: gap
+  Status: undecided
+
 Portland/RuntimeDefineMethod:
   Description: 'Portland makes no methods or constants at runtime: no `define_method`, `const_get`, or `const_set`.'
   Enabled: true
   VersionAdded: '<<next>>'
   Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/metaprogramming.md'
+  Difference: thesis
+  Status: decided
+
+Portland/ShiftAppend:
+  Description: 'In Portland, `<<` rebinds a `mutable` name rather than mutating the value.'
+  Enabled: false
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/adr/0015-2026-07-23-values-never-mutate.md'
   Difference: thesis
   Status: decided
 
@@ -121,6 +193,14 @@ Portland/SingletonClass:
   Difference: taste
   Status: decided
 
+Portland/Splat:
+  Description: 'Portland defers splats; keyword arguments are Ruby 3''s.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/blob/main/docs/adr/0014-2026-07-22-keyword-arguments.md'
+  Difference: gap
+  Status: undecided
+
 Portland/ThreadModel:
   Description: 'Portland has one concurrency model, `together`, in place of threads, fibers, mutexes, and queues.'
   Enabled: true
@@ -128,3 +208,11 @@ Portland/ThreadModel:
   Reference: 'https://github.com/portlandlang/portland/blob/main/docs/ruby/concurrency.md'
   Difference: thesis
   Status: decided
+
+Portland/Visibility:
+  Description: 'Portland has no `private`, `protected`, or `public` yet; visibility is undecided.'
+  Enabled: true
+  VersionAdded: '<<next>>'
+  Reference: 'https://github.com/portlandlang/portland/issues/133'
+  Difference: gap
+  Status: undecided
