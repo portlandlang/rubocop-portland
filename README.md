@@ -2,7 +2,7 @@
 
 The migration linter for [Portland](https://github.com/portlandlang/portland), a Ruby-flavored language for Apple silicon. Portland's promise to Rubyists is that it feels like home and porting is mechanical. Each cop here finds one Ruby spelling Portland changes or removes, says what Portland says instead, links the ledger page that explains why, and rewrites it where the rewrite is mechanical.
 
-Run it on a gem or an app to see how far the code is from Portland today, and which of those distances are decided and which are still open questions.
+Run it on a gem or an app to see how far the code is from Portland, and which of those distances are decided and which are still open questions.
 
 ## Installation
 
@@ -35,7 +35,7 @@ bundle exec rubocop --only Portland -A
 
 ## The cops
 
-Each cop carries a `Difference` and a `Status` in `config/default.yml`, Portland's principle 2 kinds: **thesis**, a difference Portland exists for (values never mutate, failures are values, the runtime is closed); **taste**, a spelling Portland removed, which may come back; and **gap**, something Portland hasn't decided or built yet. [ruby_research](https://github.com/portlandlang/ruby_research)'s readiness census reads the same keys to grade every gem on RubyGems.org, shown at [portlandlang.com/gems](https://portlandlang.com/gems/).
+Each cop carries a `Difference` and a `Status` in `config/default.yml`: **thesis** and **taste**, Portland's principle 2 kinds — a difference Portland exists for (values never mutate, failures are values, the runtime is closed), and a spelling Portland removed, which may come back — plus **gap**, something Portland hasn't decided or built. [ruby_research](https://github.com/portlandlang/ruby_research)'s readiness census, shown at [portlandlang.com/gems](https://portlandlang.com/gems/), grades from its own removals list; reading these keys instead is [ruby_research#10](https://github.com/portlandlang/ruby_research/issues/10). Some cops flag spellings Portland has since accepted; [#1](https://github.com/portlandlang/rubocop-portland/issues/1) narrows them.
 
 | Cop | Finds | Difference | Status | Rewrites |
 |---|---|---|---|---|

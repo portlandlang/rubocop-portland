@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+- **README and config header say what is true** ([portland#288](https://github.com/portlandlang/portland/issues/288)) — `gap` is this gem's own word, not one of principle 2's kinds; ruby_research's census grades from its own removals list, and reading these keys is ruby_research#10; and some cops flag spellings Portland has accepted, which #1 narrows.
+
 - **A README, and `script/bootstrap` and `script/test`** — the generator's template gives way to what the gem is for, how to install it from git and run it (`rubocop --only Portland`, `-A` for the rewrites), and a table of all 26 cops with each one's difference, status, and rewrite.
 
 - **Eleven more cops, completing the census's list**: `Portland/NumberedParameter` rewrites a lone `_1` to `it` and reports blocks using `_2` onward; `Portland/InstanceVariableRead` names the bare field for `@name`; and the open questions report naming the issue that holds each — `Portland/InstanceVariableWrite` and `Portland/AttrWriter` (instance state, portland#103), `Portland/AttrReader` (#134), `Portland/Visibility` (#133), `Portland/RequireByName` (#116), `Portland/Regex` (#74), `Portland/Splat` (ADR 0014's deferral), and `Portland/Bitwise` (ADR 0003, tentative). `Portland/ShiftAppend` notes that `<<` rebinds a `mutable` name; it ships off by default, since the line itself usually ports as is. 26 cops in all, one per entry in ruby_research's removals list.
