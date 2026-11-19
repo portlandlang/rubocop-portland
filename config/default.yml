@@ -1,12 +1,13 @@
 # One cop per Ruby difference portland's ledger (docs/ruby/*.md) names.
 #
 # Beyond RuboCop's own keys, each cop carries:
-#   Difference: thesis | taste | gap — principle 2's kinds (docs/principles.md):
+#   Difference: thesis | taste — principle 2's kinds (docs/principles.md):
 #     thesis, a difference Portland exists for; taste, a spelling it removed,
-#     which defaults to Ruby and must name what it buys; gap, something not
-#     decided or built yet.
+#     which defaults to Ruby and must name what it buys — or gap, this gem's
+#     own word for something Portland has not decided or built.
 #   Status: decided | undecided
-# ruby_research's readiness census reads these to grade each gem.
+# ruby_research's readiness census will read these to grade each gem
+# (ruby_research#10); it reads its own removals list meanwhile.
 
 Portland/AttrReader:
   Description: 'Portland lists fields bare; `attr_reader` as a spelling of that is undecided.'
